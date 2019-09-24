@@ -48,9 +48,9 @@ namespace WebApplication1
             }
 
             // Needed to be able to get RouteData from HttpContext through the IHttpContextAccessor
-            app.UseEndpointRouting();
+            // app.UseEndpointRouting();   // We need use classic IRouter-based routing at present
             // Needed to secure the application using the standard Authorize attribute
-            app.UseAuthentication();
+            // app.UseAuthentication();    // your won't get route data before your Router middleware is invoked
 
             // OData entity model builder
             var builder = new ODataConventionModelBuilder(app.ApplicationServices);
